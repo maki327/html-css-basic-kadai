@@ -1,0 +1,110 @@
+/* 余白のリセット */
+body, h1, p {
+  margin: 0;
+}
+
+/* フォントサイズの統一 */
+p, a {
+  font-size: 20px;
+}
+
+/* header 要素のスタイル */
+header {
+  margin-bottom: 20px;
+  background-color: rgb(244, 79, 79);
+  text-align: center;
+}
+
+/* h1 要素のスタイル */
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+main {
+  padding: 10px;
+}
+
+/* Flexコンテナの設定 */
+#parent {
+  display: flex;
+  justify-content: space-between; /* 両端を含めて均等な間隔で配置 */
+}
+
+/* 各天気カードのスタイル */
+.contents {
+  flex-basis: 25%;
+  border: 3px solid rgb(238, 204, 204);
+  padding: 10px 15px;   /* 要素内の余白：上下10px、左右15px */
+  margin: 20px 0;       /* 要素外の余白：上下20px、左右0 */
+  text-align: center;   /* 中のテキストを中央揃え */
+}
+
+/* h2要素のスタイル */
+h2 {
+  font-size: 25px;
+  border-bottom: 3px dotted rgb(236, 122, 122);
+  position: relative;
+  padding-left: 20px;
+}
+
+/* h2の前に●マークを表示 */
+h2::before {
+  content: "●";
+  color: rgb(239, 111, 139);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* .contents内の2番目のp要素の最初の文字にスタイルを適用 */
+.contents p:nth-of-type(2)::first-letter {
+  font-weight: bold;
+  color: rgb(97, 206, 249);
+}
+
+.contents img {
+  margin: 10px 0;
+  width: 70%;
+}
+
+/* footer 要素のスタイル */
+footer {
+  background-color: rgb(244, 79, 79);
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* a 要素のスタイル */
+footer a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* 訪問済みリンクの色 */
+footer a:visited {
+  color: rgb(193, 234, 251);
+}
+
+/* マウスホバー時の色 */
+footer a:hover {
+  color: rgb(245, 178, 168);
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  #parent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contents {
+    flex-basis: 80%;
+  }
+}
